@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXE RENT - Luxury Brand Rental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">LUXE RENT</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">My Rentals</a>
+        <a href="#">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Rent Luxury, Live Elegantly</h2>
+      <p>Experience premium designer brands without the premium price tag</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="filters">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by brand or model...">
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="filter-group">
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="bag">Bags</option>
+          <option value="clothes">Clothes</option>
+          <option value="shoes">Shoes</option>
+          <option value="accessories">Accessories</option>
+        </select>
+        <input type="number" id="minPrice" placeholder="Min price">
+        <input type="number" id="maxPrice" placeholder="Max price">
+        <button id="filterBtn">Filter</button>
+      </div>
+    </section>
+
+    <section class="products-grid" id="productsGrid">
+      <p class="loading">Loading products...</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 LUXE RENT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

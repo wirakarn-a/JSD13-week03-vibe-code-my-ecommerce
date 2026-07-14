@@ -1,7 +1,8 @@
 # Goal
 > Vibe code the MERN Stack e-commerce web app for brandname rental business
 
-ช่วยเขียนโค้ดสร้างเว็บไซต์ *e-commerce* สำหรับธุรกิจเช่าสินค้าแบรนด์เนม (กระเป๋า นาฬิกา ชุด) โดยให้สร้างไฟล์ทั้งหมดไว้ที่ _**C:\Users\acer\software-project\jsd13\week-03\vibe-code-my-ecommerce**_
+//ใช้ database จาก C:\Users\acer\software-project\jsd13\week-02\first-meet-dbs\my-ecommerce-project มาใช้ทำ backend ในไฟล์ api ส่วน front end ทำในไฟล์ web โดยให้ ai ช่วย vibe code ทำเว็บ e-commerce เพื่อใช้งานจริง ไม่ต้องทำ react
+
 โดยมีฐานข้อมูลที่ออกแบบไว้แล้ว รายละเอียดมีดังนี้:
 
 ## 1. Tech Stack ที่ใช้
@@ -28,5 +29,3 @@
 - เขียนโค้ดเชื่อมต่อฐานข้อมูล MongoDB
 - เขียน API backend สำหรับดึงข้อมูลสินค้า (GET) และรับข้อมูลการจอง (POST)
 - เขียนโค้ด frontend หน้าแรก ดึงข้อมูลสินค้าจาก API มาแสดงผลเป็นการ์ดสินค้า (product card) ที่สวยงามและรองรับมือถือ (responsive)
-
-อธิบายขั้นตอนการติดตั้งและการรันโปรเจกต์นี้อย่างละเอียดด้วย (เช่น ต้องลง package อะไรบ้าง รันคำสั่งไหน)
