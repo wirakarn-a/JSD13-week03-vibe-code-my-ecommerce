@@ -1,31 +1,67 @@
-# Goal
-> Vibe code the MERN Stack e-commerce web app for brandname rental business
+# Luxury Rental E-commerce Platform
 
-//ใช้ database จาก C:\Users\acer\software-project\jsd13\week-02\first-meet-dbs\my-ecommerce-project มาใช้ทำ backend ในไฟล์ api ส่วน front end ทำในไฟล์ web โดยให้ ai ช่วย vibe code ทำเว็บ e-commerce เพื่อใช้งานจริง ไม่ต้องทำ react
+แพลตฟอร์ม e-commerce สำหรับธุรกิจเช่าสินค้าแบรนด์เนมระยะสั้น (กระเป๋า นาฬิกา ชุด เครื่องประดับ) ให้ลูกค้าเลือกเช่าสินค้าออนไลน์สำหรับถ่ายรูป งานสำคัญ หรืออีเวนต์ต่างๆ โดยไม่ต้องซื้อของราคาแพงที่ใช้เพียงครั้งเดียว
 
-โดยมีฐานข้อมูลที่ออกแบบไว้แล้ว รายละเอียดมีดังนี้:
+## ภาพรวมธุรกิจ
 
-## 1. Tech Stack ที่ใช้
-- Frontend: HTML, CSS, JavaScript (DOM manipulation ธรรมดา ยังไม่ใช้ React)
-- Backend: Node.js กับ Express
-- Database: MongoDB
+- **โมเดล:** เช่าสินค้าที่เป็นเจ้าของสต็อกเอง (ไม่ใช่ marketplace ให้คนอื่นมาลงขายเช่า)
+- **กลุ่มเป้าหมาย:** ผู้หญิงวัยทำงาน, content creator, แขกงานแต่ง/งานทางการ, ผู้เตรียมตัวสัมภาษณ์งาน
+- **จุดขายหลัก:** เข้าถึงของแบรนด์เนมในราคาย่อมเยา, รับประกันของแท้, ระบบสะสมแต้มสำหรับลูกค้าประจำ
 
-## 2. โครงสร้าง Database
-อ่านและวิเคราะห์ข้อมูลจากไฟล์ทั้งหมดใน folder  _**C:\Users\acer\software-project\jsd13\week-02\first-meet-dbs\my-ecommerce-project**_ ก่อน
+## Tech Stack
 
-(มี schema และ data ของ collections ต่างๆ เช่น customers, products, rentals, payments, condition_log, maintenance, loyalty_points, resale, retailers) แล้วค่อยเชื่อมต่อเข้ากับ frontend
+| ส่วน | เทคโนโลยี |
+|---|---|
+| Frontend | Vanilla HTML / CSS / JavaScript |
+| Backend | Node.js + Express |
+| Database | MongoDB (Mongoose) |
 
-## 3. หน้าเว็บและฟังก์ชันที่ต้องการ
-- **หน้า Login** : ตรวจสอบสิทธิ์ผู้ใช้งาน (แยกระหว่างลูกค้ากับแอดมิน)
-- **หน้าหลัก (Homepage/Dashboard)** : แสดงแคตตาล็อกสินค้าเช่าแบบร้านหรู — โชว์รูปสินค้า แบรนด์ ราคาเช่าต่อวัน และสถานะว่าง/ไม่ว่าง
-- **ฟังก์ชันพิเศษที่ต้องการ** :
-    - ระบบค้นหาสินค้า (search bar) — ค้นหาจากชื่อแบรนด์หรือรุ่น
-    - ตัวกรองแยกหมวดหมู่ (filter) — กรองตามประเภท (กระเป๋า/นาฬิกา/ชุด) และช่วงราคา
-    - ปฏิทินเช็ควันว่างของสินค้า (availability calendar) ก่อนจอง
-- **รูปภาพ** : ส่วน banner hero ให้ใช้รูปจาก unsplash.com (ค้นด้วยคำว่า "luxury bag" หรือ "designer fashion" ก็ได้)
+## โครงสร้างฐานข้อมูล
 
-## 4. สิ่งที่ต้องการให้ทำในขั้นตอนแรก
-- สร้างโครงสร้างโฟลเดอร์ของโปรเจกต์ทั้งหมด (project structure)
-- เขียนโค้ดเชื่อมต่อฐานข้อมูล MongoDB
-- เขียน API backend สำหรับดึงข้อมูลสินค้า (GET) และรับข้อมูลการจอง (POST)
-- เขียนโค้ด frontend หน้าแรก ดึงข้อมูลสินค้าจาก API มาแสดงผลเป็นการ์ดสินค้า (product card) ที่สวยงามและรองรับมือถือ (responsive)
+Collections หลักและความสัมพันธ์:
+
+```
+CUSTOMERS ──< RENTALS ──< RENTAL_ITEMS >── PRODUCTS
+                 │              │
+                 │              ├──< CONDITION_LOG
+                 │              └──< ITEM_CHARGES
+                 └──< PAYMENTS
+
+CUSTOMERS ──< LOYALTY_POINTS
+PRODUCTS ──< MAINTENANCE
+PRODUCTS ──< RESALE >── RETAILERS
+```
+
+| Collection | หน้าที่ |
+|---|---|
+| `customers` | ข้อมูลลูกค้า, สถานะ blacklist |
+| `products` | สต็อกสินค้าเช่า (แบรนด์, ราคาเช่า, สถานะ) |
+| `rentals` | ออเดอร์การเช่า (ระดับภาพรวม) |
+| `rental_items` | รายการสินค้าแต่ละชิ้นในออเดอร์ (many-to-many ระหว่าง rentals กับ products) |
+| `payments` | การชำระเงินระดับออเดอร์ (ค่าเช่า, มัดจำ, คืนเงิน) |
+| `item_charges` | ค่าใช้จ่ายเจาะจงรายชิ้น (ค่าปรับคืนช้า, ค่าเสียหาย) |
+| `condition_log` | บันทึกสภาพสินค้าก่อน-หลังเช่า พร้อมหลักฐานภาพ |
+| `maintenance` | ประวัติทำความสะอาด/ซ่อมบำรุงสินค้า |
+| `loyalty_points` | ระบบสะสมแต้ม (เช่าครบ 10 ครั้ง รับสิทธิ์เช่าฟรี 1 ชิ้น) |
+| `resale` | บันทึกการขายสินค้าเก่าออกเป็นมือสอง |
+| `retailers` | ผู้รับซื้อสินค้ามือสอง |
+
+> Schema ต้นฉบับอยู่ที่ folder แยกต่างหาก ไม่รวมอยู่ใน repo นี้
+
+## Features
+
+- **หน้า Login** — แยกสิทธิ์ลูกค้า / แอดมิน
+- **หน้าแรก** — Hero banner (รูปจาก Unsplash), แคตตาล็อกสินค้าแบบการ์ด
+- **ค้นหา** — ค้นหาจากชื่อแบรนด์/รายละเอียดสินค้า (case-insensitive)
+- **ตัวกรอง** — กรองตามหมวดหมู่ และช่วงราคา (min/max)
+- **Responsive** — รองรับมือถือ (mobile-first grid layout)
+- **ระบบสะสมแต้ม** — เช่าครบ 10 ครั้ง รับสิทธิ์เช่าฟรี 1 ชิ้น (จำกัดราคาตามเพดานที่กำหนด)
+
+## API Endpoints
+
+| Method | Endpoint | คำอธิบาย |
+|---|---|---|
+| GET | `/api/products` | ดึงสินค้าทั้งหมด รองรับ search + filter |
+| GET | `/api/products/:id` | ดึงสินค้าชิ้นเดียว |
+| POST | `/api/rentals` | สร้างการจองใหม่ |
+| GET | `/api/rentals/:id` | เช็คสถานะการจอง |
