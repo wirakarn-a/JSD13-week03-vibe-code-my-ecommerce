@@ -4,54 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Wirakarn A.</title>
-</head>
-<body>
-    <body style="background-color: #f4f3ee;"></body>
-<center>
-    <h1 style="font-family:Georgia;">Wirakarn A.</h1>
-    <p> UI Designer | Bangkok | wirakarn.ang@gmail.com | Tel. 0961306258 </p>
-    <button class="#Summary">Summary</button>
-    <button class="#Education">Education</button>
-    <button class="#Language">Language</button>
-    <button class="#Personal Info">More Info</button>
-    <button class="#Contact">Contact</button>
-</center>
-
-<hr>
-
-    <div style="border:2px solid #bfdae8; border-radius:20px; padding:20px; background-color: #bfdae8;">
-    <h2 style="font-family:Georgia;">Summary</h2>
-    <p>
-        Friendly, detail-oriented professional with a background in coordination and vendor management. 
-        I love learning new things and I'm always looking to grow. Fluent in Thai and English, currently picking up Chinese too. 
-        Always ready to take on new opportunities and make things happen!
-    </p>
-    <center>
-        <img src="image/aiai.jpg" alt="Profile Pic" width="270" height="270"; style="border-radius:20px;">
-    </center>
-
-    <center>
-        <div class="text-box"; style="font-family:monospace;">
-        <p>"There is nothing impossible to they who will try."</p>
-        <p>Alexander the Great</p>
-    </div>
     <style>
-    .text-box {
-        width: 400px;
-        height: 65px;
-        padding: 16px;
-        border: 2px solid #fff1b5;
-        border-radius: 30px;
-        background-color: #fff1b5;
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #fffbef;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 12px 0;
+        }
+        .nav-bar button {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #64313e;
+            background-color: #ebc7c9;
+            border: 2px solid #ebc7c9;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: transform 0.15s ease, background-color 0.15s ease;
+        }
+        .nav-bar button:hover {
+            background-color: #591427;
+            color:#fff8e7;
+            transform: translateY(-2px);
+        }
+        .section {
+            width: 70%;
+            max-width: 800px;
+            margin: 12px auto;
+            border: 2px solid #f7ddd5;
+            border-radius: 25px;
+            padding: 30px;
+            background-color: #f7ddd5;
+            scroll-margin-top: 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-family: Georgia;
+            margin-top: 0;
+        }
+        .summary-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            text-align: left;
+            flex-wrap: wrap;
+            color:#6e2236;
+        }
+        .summary-content p {
+            flex: 1;
+            min-width: 220px;
+            margin: 0;
+        }
+        .summary-content img {
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+        .quote-box {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto 0;
+            padding: 16px;
+            border: 2px solid #6b403b;
+            border-radius: 30px;
+            background-color: #6b403b;
+            color: #f7ddd5;
+            font-family: monospace;
+            text-align: center;
+        }
+        .blue-section {
+            border: 2px solid #f7ddd5;
+            background-color: #f7ddd5;
+            font-size: 15px;
+            color:#6e2236;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #64313e;
+            padding: 8px;
+        }
+        .social-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: #64313e;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
         }
     </style>
-    </center>
-
-    <br><br>
+</head>
+<body>
+ 
+<center>
+    <h1 style="font-family:Georgia; color:#6e2236";>Wirakarn A. (Aiai)</h1>
+    <p style="color:#6e2236">UX/UI Designer | Bangkok, Thailand</p>
+    <p style="color:#6e2236">wirakarn.ang@gmail.com | (+66) 961306258</p>
+</center>
+ 
+<div class="nav-bar">
+    <button onclick="document.getElementById('Summary').scrollIntoView()">Summary</button>
+    <button onclick="document.getElementById('Education').scrollIntoView()">Education</button>
+    <button onclick="document.getElementById('Language').scrollIntoView()">Language</button>
+    <button onclick="document.getElementById('Experience').scrollIntoView()">Experience</button>
+    <button onclick="document.getElementById('Contact').scrollIntoView()">Contact</button>
+</div>
+ 
+<div id="Summary" class="section">
+    <h2 style="color:#64313e">SUMMARY</h2>
     <hr>
-    
-    <h2>Education</h2>
-    <ol>
+    <div class="summary-content">
+        <img src="image/aiai.jpg" alt="Profile Pic" width="200" height="200">
+        <p>
+            Friendly, detail-oriented professional with a background in coordination and vendor management.
+            I love learning new things and I'm always looking to grow. Fluent in Thai and English, currently picking up Chinese too.
+            Always ready to take on new opportunities and make things happen!
+        </p>
+    </div>
+    <div class="quote-box">
+        <p style="margin:0;">"There is nothing impossible to they who will try."</p>
+        <p style="margin:0;">Alexander the Great</p>
+    </div>
+</div>
+ 
+<div id="Education" class="section blue-section">
+    <h2 style="color:#64313e">EDUCATION</h2>
+    <hr>
+    <ol style="text-align:left; display:inline-block;">
         <li>
             <h3>Assumption University</h3>
             <p>Bachelor of Business Administration</p>
@@ -62,75 +163,66 @@
             <p>English-Chinese Program</p>
         </li>
     </ol>
-
-    <br><br>
-    <h2>Language</h2>
-    <ul>
-        <li>Thai: Native</li>
-        <li>English: Upper Intermediate</li>
-        <li>Chinese: Beginner</li>
-    </ul>
-
-    <h2>Get to know me better🤍</h2>
-    <p>Beyond the formal stuff — here's who I really am! &#129669;</p>
-    <h4> <em>My Top 3 things</em></h4>
-    <table>
-  <tr>
-    <th>Movie</th>
-    <th>Activity</th>
-    <th>Food</th>
-  </tr>
-  <tr>
-    <td>Harry Potter</td>
-    <td>Pilates</td>
-    <td>Sashimi</td>
-  </tr>
-  <tr>
-    <td>The Shawshank Redemtion</td>
-    <td>Cycling</td>
-    <td>Malatang</td>
-  </tr>
-  <tr>
-    <td>Reply 1988</td>
-    <td>Cafe Hoping</td>
-    <td>Somtum</td>
-  </tr>
-</table>
 </div>
-
-    <h2>Let's Connect!⭐</h2>
-    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-    <a 
-        href="https://github.com/wirakarn-a" target="_blank">
-        <img src="image/github-logo.png" alt="GitHub" width="50">
-    </a>
-    <a href="https://github.com/wirakarn-a" target="_blank" style="text-decoration: none; color: black; font-size: 15px;">
-        GitHub
-    </a>
+ 
+<div id="Language" class="section blue-section">
+    <h2 style="color:#64313e">LANGUAGE</h2>
+    <hr>
+    <ul style="text-align:left; display:inline-block;">
+        <li><strong>Thai:</strong> Native</li>
+        <li><strong>English:</strong> Excellent</li>
+        <li><strong>Chinese:</strong> Beginner</li>
+    </ul>
+</div>
+ 
+<div id="Experience" class="section blue-section">
+    <h2 style="color:#64313e">WORK EXPERIENCE</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Purchasing Officer</td>
+                <td>Hi-tech Apparel Co., Ltd</td>
+                <td>Sep 2025 - Jun 2026</td>
+            </tr>
+            <tr>
+                <td>Executive Assistant</td>
+                <td>TRA Development Co., Ltd</td>
+                <td>Nov 2024 - Apr 2025</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Let's go deeper — tap the link below ✨</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+ 
+<div id="Contact" class="section blue-section">
+    <h2 style="color:#64313e">Let's Connect!⭐</h2>
+ 
+    <div class="social-links">
+        <a href="https://github.com/wirakarn-a" target="_blank">
+            <img src="image/github-logo.png" alt="GitHub" width="50">
+            GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/wirakarn-angumnuaychock-576363242/" target="_blank">
+            <img src="image/linkedin.png" alt="LinkedIn" width="50">
+            LinkedIn
+        </a>
+        <a href="https://www.instagram.com/iiwrkn?igsh=ejBuazN1eTkzeWM0&utm_source=qr" target="_blank">
+            <img src="image/instagram.png" alt="Instagram" width="50">
+            Instagram
+        </a>
     </div>
-
-    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-    <a 
-        href="https://www.linkedin.com/in/wirakarn-angumnuaychock-576363242/" target="_blank">
-        <img src="image/linkedin.png" alt="LinkedIn" width="50">
-    </a>
-    <a href="https://www.linkedin.com/in/wirakarn-angumnuaychock-576363242/" target="_blank" style="text-decoration: none; color: black; font-size: 15px;">
-        LinkedIn
-    </a>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-    <a 
-        href="https://www.instagram.com/iiwrkn?igsh=ejBuazN1eTkzeWM0&utm_source=qr" target="_blank">
-        <img src="image/instagram.png" alt="Instagram" width="50">
-    </a>
-    <a href="https://www.instagram.com/iiwrkn?igsh=ejBuazN1eTkzeWM0&utm_source=qr" target="_blank" style="text-decoration: none; color: black; font-size: 15px;">
-        Instagram
-    </a>
-    </div>
-
-    
-
-    
+</div>
+ 
 </body>
 </html>
