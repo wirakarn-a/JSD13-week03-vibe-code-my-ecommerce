@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <body style="background-color: #bfdae8;"></body>
+    <center>
+        <div style="border:2px solid #f4f3ee; border-radius:20px; padding:20px; background-color: #f4f3ee;">
+        <h1>Registration Form</h1>
+        <p>Register Here!</p>
+        <form action="/api/order" method="post">
+        <label>
+            Username
+            <input id="cusername" type="text" name="cusername" placeholder="kittyinwonderland" required/>
+        </label>
+        <label>
+            Password
+            <input id="cpassword" type="password" name="cpassword" required/>
+        </label>
+
+        <br><br>
+        <hr>
+
+        <h3>Contact Details</h3>
+        <label>
+            <p>Full Name</p>
+            <input id="cname" type="text" name="cname" required/>
+        </label>
+        <label>
+            <p>Phone Number</p>
+            <input id="cphone" type="text" name="cphone" required/>
+        </label>
+        <label>
+            <p>Email Address</p>
+            <input id="cemail" type="text" name="cemail" required/>
+        </label>
+        <label>
+            <p>Birth Date</p>
+            <input id="cbirthdate" type="date" name="cbirthdate"/>
+        </label>
+
+        <p>Gender</p>
+            <label for="">
+                Male
+                <input type="radio" name="gender" />
+            </label>
+            <label>
+                Female
+                <input type="radio" name="gender" />
+            </label>
+            <label>
+                Prefer not to say
+                <input type="radio" name="gender" />
+            </label>
+        
+        <br><br>
+        <hr>
+
+        <h3>Choose a plan</h3>
+        <label for="">
+                Free
+                <input type="radio" name="plan" />
+            </label>
+            <label>
+                Premium
+                <input type="radio" name="plan" />
+            </label>
+
+        <br><br>
+        <hr>
+
+        <h3>Create a New Interest</h3>
+        <label>
+            Movie
+            <input type="checkbox" name="fruit" value="strawberry"/>
+        </label>
+
+        <label>
+            Music
+            <input type="checkbox" name="fruit" value="Coconut"/>
+        </label>
+
+        <label>
+            Game
+            <input type="checkbox" name="fruit" value="Coconut"/>
+        </label>
+
+        <br><br>
+        <button type="submit">Register</button>
+        </div>
+    </center>
+    </form>
+</body>
+</html>

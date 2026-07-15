@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<body>
+    <h1>Bakery</h1>
+    <p>order here!</p>
+    <form action="/api/order" method="post">
+        <label 
+            >Name:
+            <input id="customername" type="text" name="customername" required/>
+        </label>
+
+        <p>Receive Date:</p>
+        <input type="datetime">
+
+        <p>ประเภทเค้ก</p>
+            <label for="">
+                เค้กวานิลา
+                <input type="radio" name="cake" />
+            </label>
+            <label>
+                เค้กช็อกโกแลต
+                <input type="radio" name="cake" />
+            </label>
+            <label>
+                เค้กใบเตย
+                <input type="radio" name="cake" />
+            </label>
+            
+            <label for="orangecake">เค้กส้ม</label>
+            <input type="radio" name="cake" id="orangecake" />
+
+        <p>Decoration</p>
+        <label>
+            Starwberry
+            <input type="checkbox" name="fruit" value="strawberry"/>
+        </label>
+
+        <label>
+            Coconut
+            <input type="checkbox" name="fruit" value="Coconut"/>
+        </label>
+
+        <label>
+            Yelly
+            <input type="checkbox" name="sweet" value="yelly"/>
+        </label>
+        <label>
+            Chocolate Chip
+            <input type="checkbox" name="sweet" value="chocolatechip"/>
+        </label>
+
+        <button type="submit">submit</button>
+
+    </form>
+</body>
+</html>
