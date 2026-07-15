@@ -6,11 +6,17 @@
     <title>Registration Form</title>
 </head>
 <body>
-    <body style="background-color: #bfdae8;"></body>
+    <body style="background-color: #64313e;"></body>
     <center>
-        <div style="border:2px solid #f4f3ee; border-radius:20px; padding:20px; background-color: #f4f3ee;">
-        <h1>Registration Form</h1>
-        <p>Register Here!</p>
+        <div style="
+            width:70%;
+            margin:30px auto;
+            background-color: #f4f3ee;
+            border-radius:25px;
+            padding:30px;>
+        ">
+
+        <h1 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#64313e;">Registration Form</h1>
         <form action="/api/order" method="post">
         <label>
             Username
@@ -24,7 +30,7 @@
         <br><br>
         <hr>
 
-        <h3>Contact Details</h3>
+        <h3 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#64313e;">Contact Details</h3>
         <label>
             <p>Full Name</p>
             <input id="cname" type="text" name="cname" required/>
@@ -59,7 +65,7 @@
         <br><br>
         <hr>
 
-        <h3>Choose a plan</h3>
+        <h3 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#64313e;">Choose a plan</h3>
         <label for="">
                 Free
                 <input type="radio" name="plan" />
@@ -72,7 +78,7 @@
         <br><br>
         <hr>
 
-        <h3>Create a New Interest</h3>
+        <h3 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#64313e;">Create a New Interest</h3>
         <label>
             Movie
             <input type="checkbox" name="fruit" value="strawberry"/>
@@ -87,11 +93,16 @@
             Game
             <input type="checkbox" name="fruit" value="Coconut"/>
         </label>
+        <br><br>
 
         <br><br>
-        <button type="submit">Register</button>
+        <button 
+            type="submit"
+            style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:#64313e; font-size:large;">&#127804 REGISTER &#127804
+        </button>
         </div>
     </center>
     </form>
+
 </body>
 </html>
