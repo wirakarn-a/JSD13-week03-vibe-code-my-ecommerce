@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8f8f8;
-  color: #333;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafaf8;
+  color: #2c2c2c;
 }
 
 .container {
@@ -18,12 +18,13 @@ body {
 
 /* Navbar */
 .navbar {
-  background: #1a1a1a;
-  color: white;
-  padding: 15px 0;
+  background: #fff;
+  color: #1a1a1a;
+  padding: 18px 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid #eee;
 }
 
 .navbar .container {
@@ -33,27 +34,32 @@ body {
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  letter-spacing: 3px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 6px;
+  color: #1a1a1a;
 }
 
 .navbar nav a {
-  color: white;
+  color: #666;
   text-decoration: none;
-  margin-left: 25px;
-  font-size: 0.95rem;
+  margin-left: 30px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
 }
 
 .navbar nav a:hover {
-  color: #d4af37;
+  color: #b8966e;
 }
 
 /* Hero */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1400&auto=format&fit=crop') center/cover;
-  height: 400px;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1400&auto=format&fit=crop') center/cover;
+  height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,23 +68,27 @@ body {
 }
 
 .hero h2 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+  letter-spacing: 4px;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.85;
+  letter-spacing: 1px;
 }
 
 /* Filters */
 .filters {
-  background: white;
-  padding: 20px;
+  background: #fff;
+  padding: 24px;
   margin: 30px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  border: 1px solid #eee;
 }
 
 .search-box {
@@ -89,10 +99,17 @@ body {
 
 .search-box input {
   flex: 1;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fafaf8;
+  transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #b8966e;
 }
 
 .filter-group {
@@ -103,10 +120,11 @@ body {
 
 .filter-group select,
 .filter-group input {
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #fafaf8;
 }
 
 .filter-group select {
@@ -114,89 +132,103 @@ body {
 }
 
 .filter-group input[type="number"] {
-  width: 120px;
+  width: 130px;
 }
 
 button {
   background: #1a1a1a;
   color: white;
   border: none;
-  padding: 12px 25px;
-  border-radius: 6px;
+  padding: 12px 28px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background: #d4af37;
+  background: #b8966e;
 }
 
 /* Products Grid */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 24px;
   padding: 20px 0 40px;
 }
 
 .product-card {
-  background: white;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
+  border: 1px solid #eee;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
 }
 
 .product-card .card-image {
-  height: 200px;
-  background: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  height: 280px;
+  overflow: hidden;
+}
+
+.product-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.product-card:hover .card-image img {
+  transform: scale(1.05);
 }
 
 .product-card .card-body {
-  padding: 15px;
+  padding: 18px;
 }
 
 .product-card .brand {
+  font-family: 'Cormorant Garamond', serif;
   font-size: 0.8rem;
-  color: #d4af37;
+  color: #b8966e;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 
 .product-card .details {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.88rem;
+  color: #555;
   margin: 8px 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .product-card .meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .product-card .price {
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #1a1a1a;
 }
 
 .product-card .category-tag {
-  background: #f0f0f0;
-  padding: 4px 10px;
+  background: #f5f3ef;
+  padding: 4px 12px;
   border-radius: 20px;
-  font-size: 0.75rem;
-  color: #666;
+  font-size: 0.72rem;
+  color: #888;
+  text-transform: capitalize;
 }
 
 .product-card .size-tag {
@@ -204,7 +236,7 @@ button:hover {
   color: white;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
 }
 
 .loading {
@@ -225,20 +257,22 @@ button:hover {
 /* Footer */
 footer {
   background: #1a1a1a;
-  color: white;
+  color: #999;
   text-align: center;
-  padding: 20px 0;
+  padding: 24px 0;
   margin-top: 40px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .hero p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .filter-group {
